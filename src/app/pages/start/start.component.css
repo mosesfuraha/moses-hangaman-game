@@ -38,7 +38,7 @@
   --bg: rgb(254, 113, 254);
   --bg-hover: rgb(229, 155, 254);
   --inner-shadow: rgb(198, 66, 251);
-  --outer-shadow: rgb() 20, 14, 102;
+  --outer-shadow: rgb( 20, 14, 102);
 }
 .button-one {
   --bg: rgb(36, 98, 255);

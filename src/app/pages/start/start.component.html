@@ -11,6 +11,7 @@
       <div
         class="relative mx-auto flex justify-center items-center rounded-full bg-gradient-to-r from-playIconColor1 to-playIconColor2 shadow-lg cursor-pointer"
         style="width: 120px; height: 120px; box-shadow: 0 12px 10px #000000"
+        (click)="navigateToCategory()"
       >
         <img
           src="/assets/images/icon-play.svg"
@@ -20,7 +21,7 @@
       </div>
       <button
         class="button-one text-white px-14 py-2 rounded-3xl mt-20 border-4 border-[#0b1524] font-mouse-memoirs w-[50%]"
-       routerLink="/guide"
+        routerLink="/guide"
       >
         How to play
       </button>

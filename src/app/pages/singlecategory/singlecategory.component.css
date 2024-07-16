@@ -1,0 +1,15 @@
+
+.category-header img {
+  margin-left: 0.5rem;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 2rem;
+  font-size: 5rem;
+  width: 5rem;
+  height: 6rem;
+}

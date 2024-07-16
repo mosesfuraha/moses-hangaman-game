@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { StartComponent } from './pages/start/start.component';
 import { GuideComponent } from './pages/guide/guide.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     GuideComponent,
-    CategoryComponent
+    CategoryComponent,
+    SinglecategoryComponent
   ],
   imports: [
     BrowserModule,
