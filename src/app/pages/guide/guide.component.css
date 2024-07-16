@@ -1,0 +1,78 @@
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.guide-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 80px 115px;
+  font-family: "Mouse Memoirs", sans-serif;
+}
+
+.instruction-title {
+  font-size: 6rem;
+  color: rgb(36, 98, 255);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.instruction-subtitle {
+  color: rgb(20, 14, 102);
+  font-size: 2.8rem;
+  margin-top: 2.2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #887dc0;
+  font-weight: 500;
+  text-align: justify;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 3rem;
+}
+
+.back-button {
+  background: linear-gradient(
+    45deg,
+    rgba(254, 113, 254, 0.9),
+    rgba(198, 66, 251, 0.9)
+  );
+}
+.back-content {
+  animation: slideInFromTop 2s ease-out;
+}
+.instruction {
+  animation: slideInLeft 1s ease-out;
+}
