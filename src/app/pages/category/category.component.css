@@ -52,3 +52,9 @@
   animation: slideInLeft 2s ease-out;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .category-items {
+    width: 360px;
+  }
+}
