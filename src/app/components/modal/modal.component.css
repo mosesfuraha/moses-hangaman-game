@@ -24,8 +24,8 @@
   width: 595px;
   height: 450px;
   background: linear-gradient(rgb(52, 74, 186, 0.9), rgb(0, 20, 121, 0.9));
-  border-radius: 72px;
   box-shadow: inset 0 -8px 0 4px #140e66, inset 0 6px 0 9px #2463ff;
+  border-radius: 72px;
   --y: -75vh;
   --time-scale: 3;
   padding-top: 150px;
@@ -78,4 +78,41 @@
   padding: 20px;
   border-radius: 8px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .start-content {
+    width: 350px;
+  }
+  .button-one {
+    width: 90%;
+  }
+  .back-content {
+    width: 80%;
+    justify-content: center;
+  }
+  .back-button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+  }
+  .back-button img {
+    width: 24px;
+    height: 24px;
+  }
+  .back-button {
+    background: linear-gradient(
+      45deg,
+      rgba(254, 113, 254, 0.9),
+      rgba(198, 66, 251, 0.9)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-content img {
+    margin-left: 0;
+    margin-top: 16px;
+    width: 50%;
+  }
 }
