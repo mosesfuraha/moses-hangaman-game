@@ -1,0 +1,81 @@
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  animation: slideInFromTop 2s ease-out;
+}
+
+.start-content {
+  width: 595px;
+  height: 450px;
+  background: linear-gradient(rgb(52, 74, 186, 0.9), rgb(0, 20, 121, 0.9));
+  border-radius: 72px;
+  box-shadow: inset 0 -8px 0 4px #140e66, inset 0 6px 0 9px #2463ff;
+  --y: -75vh;
+  --time-scale: 3;
+  padding-top: 150px;
+  display: flex;
+}
+
+.colors {
+  --bg: rgb(254, 113, 254);
+  --bg-hover: rgb(229, 155, 254);
+  --inner-shadow: rgb(198, 66, 251);
+  --outer-shadow: rgb(20, 14, 102);
+}
+
+.button-one {
+  --bg: rgb(36, 98, 255);
+  --bg-hover: rgb(60, 116, 255);
+  --inner-shadow: rgb(60, 116, 255);
+  --outer-shadow: rgb(20, 14, 102);
+  background: var(--bg);
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 2rem;
+
+  cursor: pointer;
+}
+
+.button-one:hover {
+  background: rgb(60, 116, 255);
+}
+.button-three {
+  background: linear-gradient(to right, #fe71fe, #7199ff);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}

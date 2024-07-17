@@ -2,15 +2,16 @@
   class="category-container p-8 rounded-lg shadow-lg min-h-screen flex flex-col items-center gap-16 px-28 text-center font-mouse-memoirs"
 >
   <div class="w-full flex items-center justify-between">
-    <div class="flex items-center">
+    <div class="flex items-center single-content">
       <button
         class="p-5 bg-gradient-back-button text-white rounded-full relative flex items-center justify-center"
+        (click)="openModal()"
       >
         <img src="assets/images/icon-menu.svg" alt="Back" class="w-8 h-8" />
       </button>
       <h1 class="text-[4rem] text-[#FFFFFF] ml-12">Sports</h1>
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center single-content">
       <div
         class="progress-bar w-52 h-3 bg-[#ffffff] rounded-full overflow-hidden mr-4"
       >
@@ -24,175 +25,44 @@
   </div>
 
   <!-- Word for guessing -->
-  <div class="word-container flex justify-center gap-4">
+  <div class="word-container flex justify-center gap-4 single-content">
     <button
+      *ngFor="let char of word"
       class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
     >
-      S
+      {{ char }}
     </button>
-    <button
-      class="letter text-center bg-[#2b1677b2] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
-    ></button>
-    <button
-      class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
-    >
-      O
-    </button>
-    <button
-      class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
-    >
-      R
-    </button>
-    <button
-      class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
-    >
-      T
-    </button>
-    <button
-      class="letter text-center bg-[#2b1677b2] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
-    ></button>
   </div>
 
-  <!-- Keyboard -->
-  <div class="keyboard-container flex flex-wrap justify-center gap-6 mt-8">
-    <!-- Row 1 -->
+  <div
+    class="keyboard-container flex flex-wrap justify-center gap-6 mt-8 single-content"
+  >
     <div class="flex gap-6">
       <button
+        *ngFor="let letter of lettersRow1"
         class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
       >
-        A
-      </button>
-      <button
-        class="key bg-[#595565b2] text-[#ffffff] py-6 px-8 rounded-3xl text-5xl"
-      >
-        B
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        C
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        D
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        E
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        F
-      </button>
-      <button
-        class="key bg-[#595565b2] text-[#ffffff] py-6 px-8 rounded-3xl text-5xl"
-      >
-        G
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        H
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        I
+        {{ letter }}
       </button>
     </div>
-    <!-- Row 2 -->
-    <div class="flex gap-6 mt-6">
+
+    <div class="flex gap-6 mt-6 single-content">
       <button
+        *ngFor="let letter of lettersRow2"
         class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
       >
-        J
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        K
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        L
-      </button>
-      <button
-        class="key bg-[#595565b2] text-[#ffffff] py-6 px-8 rounded-3xl text-5xl"
-      >
-        M
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        N
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        O
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        P
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        Q
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        R
+        {{ letter }}
       </button>
     </div>
     <!-- Row 3 -->
-    <div class="flex gap-6 mt-6">
+    <div class="flex gap-6 mt-6 single-content">
       <button
+        *ngFor="let letter of lettersRow3"
         class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
       >
-        S
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        T
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        U
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        V
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        W
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        X
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        Y
-      </button>
-      <button
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
-      >
-        Z
+        {{ letter }}
       </button>
     </div>
   </div>
 </div>
+<app-modal></app-modal>

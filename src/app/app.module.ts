@@ -7,6 +7,7 @@ import { StartComponent } from './pages/start/start.component';
 import { GuideComponent } from './pages/guide/guide.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.c
     StartComponent,
     GuideComponent,
     CategoryComponent,
-    SinglecategoryComponent
+    SinglecategoryComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
