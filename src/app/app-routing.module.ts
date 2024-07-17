@@ -7,8 +7,7 @@ import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.c
 import { WinComponent } from './components/win/win.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'start', pathMatch: 'full' },
-  { path: 'start', component: StartComponent },
+  { path: '', component: StartComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'category/:category', component: SinglecategoryComponent },
