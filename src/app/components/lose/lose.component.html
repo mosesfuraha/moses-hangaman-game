@@ -1,8 +1,8 @@
-<div *ngIf="(modalState$ | async) === 'win'" class="modal-overlay">
+<div *ngIf="(modalState$ | async) === 'lose'" class="modal-overlay">
   <div class="start-container">
     <div class="relative start-content mt-2">
       <h1 class="absolute top-[-60px] left-1/2 transform -translate-x-1/2 z-10">
-        <img src="/assets/images/You Win.png" alt="You Win" class="mx-auto" />
+        <img src="/assets/images/You Lose.png" alt="You Lose" class="mx-auto" />
       </h1>
       <div
         class="relative text-center w-full flex flex-col items-center space-y-4"
@@ -10,7 +10,7 @@
         <button
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2"
         >
-          Play
+          Play Again
         </button>
         <button
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2"

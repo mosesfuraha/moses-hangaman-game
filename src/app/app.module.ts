@@ -9,6 +9,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { WinComponent } from './components/win/win.component';
+import { LoseComponent } from './components/lose/lose.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WinComponent } from './components/win/win.component';
     CategoryComponent,
     SinglecategoryComponent,
     ModalComponent,
-    WinComponent
+    WinComponent,
+    LoseComponent
   ],
   imports: [
     BrowserModule,

@@ -5,14 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ModalService {
-  private modalVisible = new BehaviorSubject<boolean>(false);
-  modalVisible$ = this.modalVisible.asObservable();
+  private modalState = new BehaviorSubject<string | null>(null);
+  modalState$ = this.modalState.asObservable();
 
-  showModal() {
-    this.modalVisible.next(true);
+  showModal(modalType: string) {
+    this.modalState.next(modalType);
   }
 
   hideModal() {
-    this.modalVisible.next(false);
+    this.modalState.next(null);
   }
 }

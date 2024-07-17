@@ -71,6 +71,12 @@ export class SinglecategoryComponent implements OnInit {
             ? char
             : ''
         );
+
+      if (this.isWordGuessed()) {
+        this.modalService.showModal('win');
+      } else if (this.remainingAttempts === 0) {
+        this.modalService.showModal('lose');
+      }
     }
   }
 
@@ -82,7 +88,11 @@ export class SinglecategoryComponent implements OnInit {
     return this.guessedLetters.has(letter) || this.revealedLetters.has(letter);
   }
 
+  isWordGuessed(): boolean {
+    return this.word.join('') === this.selectedWord;
+  }
+
   openModal() {
-    this.modalService.showModal();
+    this.modalService.showModal('paused');
   }
 }

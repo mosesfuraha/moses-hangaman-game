@@ -4,6 +4,7 @@ import { StartComponent } from './pages/start/start.component';
 import { GuideComponent } from './pages/guide/guide.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
+import { WinComponent } from './components/win/win.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'guide', component: GuideComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'category/:category', component: SinglecategoryComponent },
+  { path: 'win', component: WinComponent },
 ];
 
 @NgModule({
