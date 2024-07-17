@@ -21,16 +21,22 @@ export class ModalComponent implements OnInit {
   closeModal() {
     this.modalService.hideModal();
   }
-  handleModalAction() {
-    switch (this.modalType) {
-      case 'paused':
-        this.router.navigate(['/start']);
+  handleModalAction(action: string) {
+    switch (action) {
+      case 'continue':
+        if (this.modalType === 'paused') {
+          this.router.navigate(['/start']);
+        }
         break;
-      case 'win':
-        this.router.navigate(['/start']);
+      case 'playAgain':
+        if (this.modalType === 'win' || this.modalType === 'lose') {
+          this.router.navigate(['/start']);
+        }
         break;
-      case 'lose':
+      case 'newCategory':
         this.router.navigate(['/category']);
+        break;
+      case 'quit':
         break;
       default:
         break;

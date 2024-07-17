@@ -1,7 +1,5 @@
 <div *ngIf="modalType" class="modal-overlay">
-  <div
-    class="start-container flex flex-col items-center justify-center h-screen"
-  >
+  <div class="start-container flex flex-col items-center justify-center h-screen">
     <div class="relative w-1/2 start-content mt-2">
       <h1 class="absolute top-[-60px] left-1/2 transform -translate-x-1/2 z-10">
         <img
@@ -23,32 +21,30 @@
           class="mx-auto"
         />
       </h1>
-      <div
-        class="relative text-center w-full flex flex-col items-center space-y-4"
-      >
+      <div class="relative text-center w-full flex flex-col items-center space-y-4">
         <button
           *ngIf="modalType === 'paused' || modalType === 'lose'"
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2"
-          (click)="handleModalAction()"
+          (click)="handleModalAction('continue')"
         >
           Continue
         </button>
         <button
           *ngIf="modalType === 'win' || modalType === 'lose'"
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2"
-          (click)="handleModalAction()"
+          (click)="handleModalAction('playAgain')"
         >
           Play Again
         </button>
         <button
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2"
-          (click)="handleModalAction()"
+          (click)="handleModalAction('newCategory')"
         >
           New Category
         </button>
         <button
           class="button-one text-white px-14 py-2 rounded-3xl border-4 border-[#0b1524] font-mouse-memoirs w-1/2 button-three"
-          (click)="handleModalAction()"
+          (click)="handleModalAction('quit')"
         >
           Quit Game
         </button>
