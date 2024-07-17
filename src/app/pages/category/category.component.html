@@ -1,27 +1,25 @@
-<div
-  class="category-container p-8 rounded-lg shadow-lg min-h-screen flex flex-col items-center gap-16 px-28 text-center font-mouse-memoirs"
->
-  <div class="w-full flex items-center justify-start category-header">
+<div class="category-container p-8 rounded-lg shadow-lg min-h-screen flex flex-col items-center gap-16 lg:px-28 md:px-20 sm:px-10 text-center font-mouse-memoirs">
+  <div class="w-full flex flex-col md:flex-row items-center justify-start md:justify-start category-header gap-4 md:gap-0">
     <button
-      class="p-5 bg-gradient-back-button text-white rounded-full relative flex items-center justify-center"
+      class="p-4 bg-gradient-back-button text-white rounded-full flex items-center justify-center"
       (click)="navigateToStart()"
     >
-      <img src="assets/images/icon-back.svg" alt="Back" class="w-8 h-8" />
+      <img src="assets/images/icon-back.svg" alt="Back" class="w-6 h-6 md:w-8 md:h-8" />
     </button>
     <img
       src="/assets/images/Pick a Category.png"
       alt="Pick Category"
-      class="ml-[14rem] w-[40%]"
+      class="mt-4 md:mt-0 md:ml-[14rem] w-3/4 md:w-[40%]"
     />
   </div>
 
-  <div class="grid grid-cols-3 gap-8 w-full mt-8 category-items">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8 category-items">
     <div
       (click)="navigateToCategory(category)"
       *ngFor="let category of categories"
-      class="category-item bg-[#2463ff] rounded-3xl flex items-center justify-center h-36 w-[80%] custom-shadow "
+      class="category-item bg-[#2463ff] rounded-3xl flex items-center justify-center h-36 w-full sm:w-3/4 md:w-2/3 lg:w-[80%] mx-auto custom-shadow"
     >
-      <p class="text-white text-3xl">{{ category }}</p>
+      <p class="text-white text-xl sm:text-2xl lg:text-3xl">{{ category }}</p>
     </div>
   </div>
 </div>

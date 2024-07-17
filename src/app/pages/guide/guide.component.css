@@ -76,3 +76,44 @@ p {
 .instruction {
   animation: slideInLeft 1s ease-out;
 }
+
+@media (max-width: 768px) {
+  .instruction {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 1rem;
+  }
+  .instruction-title {
+    font-size: 3rem;
+  }
+  .back-content {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .back-button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+  }
+  .back-button img {
+    width: 24px;
+    height: 24px;
+  }
+  .back-button {
+    background: linear-gradient(
+      45deg,
+      rgba(254, 113, 254, 0.9),
+      rgba(198, 66, 251, 0.9)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .back-content img {
+    margin-left: 0;
+  }
+}

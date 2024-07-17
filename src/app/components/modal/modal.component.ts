@@ -30,13 +30,14 @@ export class ModalComponent implements OnInit {
         break;
       case 'playAgain':
         if (this.modalType === 'win' || this.modalType === 'lose') {
-          this.router.navigate(['/start']);
+          this.router.navigate(['/category']);
         }
         break;
       case 'newCategory':
         this.router.navigate(['/category']);
         break;
       case 'quit':
+        this.router.navigate(['/start']);
         break;
       default:
         break;

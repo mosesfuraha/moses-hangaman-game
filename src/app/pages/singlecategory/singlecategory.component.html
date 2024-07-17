@@ -1,5 +1,5 @@
 <div
-  class="category-container p-8 rounded-lg shadow-lg min-h-screen flex flex-col items-center gap-16 px-28 text-center font-mouse-memoirs"
+  class="category-container p-8 rounded-lg shadow-lg min-h-screen flex flex-col items-center gap-16 px-4 sm:px-10 md:px-20 lg:px-28 text-center font-mouse-memoirs"
 >
   <div class="w-full flex items-center justify-between">
     <div class="flex items-center single-content">
@@ -9,36 +9,44 @@
       >
         <img src="assets/images/icon-menu.svg" alt="Back" class="w-8 h-8" />
       </button>
-      <h1 class="text-[4rem] text-[#FFFFFF] ml-12">{{ category }}</h1>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-[#FFFFFF] ml-4 sm:ml-8 md:ml-12"
+      >
+        {{ category }}
+      </h1>
     </div>
     <div class="flex items-center single-content">
       <div
-        class="progress-bar w-52 h-3 bg-[#ffffff] rounded-full overflow-hidden mr-4"
+        class="progress-bar w-24 sm:w-32 md:w-40 lg:w-52 h-2 sm:h-3 bg-[#ffffff] rounded-full overflow-hidden mr-2 sm:mr-4"
       >
         <div
           class="progress bg-[#151278] h-full rounded-full"
           [style.width]="getProgressBarWidth()"
         ></div>
       </div>
-      <img src="assets/images/icon-heart.svg" alt="Heart" class="w-8 h-8" />
+      <img
+        src="assets/images/icon-heart.svg"
+        alt="Heart"
+        class="w-6 sm:w-8 h-6 sm:h-8"
+      />
     </div>
   </div>
 
   <div
-    class="word-container flex justify-center gap-4 flex-wrap single-content"
+    class="word-container flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mt-2 sm:mt-4 md:mt-6 lg:mt-8 single-content"
   >
     <div
       *ngFor="let char of word"
-      class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
+      class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl py-2 px-3 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-6 lg:px-8 flex items-center justify-center chr-btn"
     >
       {{ char ? char : "" }}
     </div>
   </div>
 
   <div
-    class="keyboard-container flex flex-wrap justify-center gap-6 mt-8 single-content"
+    class="keyboard-container flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mt-2 sm:mt-4 md:mt-6 lg:mt-8 single-content"
   >
-    <div class="flex gap-6">
+    <div class="flex gap-1 sm:gap-2 md:gap-4 lg:gap-6">
       <button
         *ngFor="let letter of lettersRow1"
         (click)="guessLetter(letter)"
@@ -47,12 +55,14 @@
           'bg-white text-[#151278]': !isDisabled(letter)
         }"
         [disabled]="isDisabled(letter)"
-        class="key py-6 px-8 rounded-3xl text-5xl"
+        class="key py-2 px-3 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-6 lg:px-8 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl "
       >
         {{ letter }}
       </button>
     </div>
-    <div class="flex gap-6 mt-6 single-content">
+    <div
+      class="flex gap-1 sm:gap-2 md:gap-4 lg:gap-6 mt-2 sm:mt-4 md:mt-6 lg:mt-8 single-content"
+    >
       <button
         *ngFor="let letter of lettersRow2"
         (click)="guessLetter(letter)"
@@ -61,12 +71,14 @@
           'bg-white text-[#151278]': !isDisabled(letter)
         }"
         [disabled]="isDisabled(letter)"
-        class="key py-6 px-8 rounded-3xl text-5xl"
+        class="key py-2 px-3 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-6 lg:px-8 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl"
       >
         {{ letter }}
       </button>
     </div>
-    <div class="flex gap-6 mt-6 single-content">
+    <div
+      class="flex gap-1 sm:gap-2 md:gap-4 lg:gap-6 mt-2 sm:mt-4 md:mt-6 lg:mt-8 single-content"
+    >
       <button
         *ngFor="let letter of lettersRow3"
         (click)="guessLetter(letter)"
@@ -75,7 +87,7 @@
           'bg-white text-[#151278]': !isDisabled(letter)
         }"
         [disabled]="isDisabled(letter)"
-        class="key py-6 px-8 rounded-3xl text-5xl"
+        class="key py-2 px-3 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-6 lg:px-8 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl"
       >
         {{ letter }}
       </button>
@@ -83,4 +95,3 @@
   </div>
 </div>
 <app-modal></app-modal>
-

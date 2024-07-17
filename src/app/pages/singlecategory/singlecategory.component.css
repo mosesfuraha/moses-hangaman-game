@@ -48,3 +48,19 @@
   height: 6rem;
   animation: slideInLeft 2s ease-out;
 }
+.chr-btn{
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .letter {
+    font-size: 3rem;
+  }
+  .chr-btn{
+    /* background-color: red; */
+    width: 40px;
+    height: 70px;
+    border-radius: 15px;
+  }
+  
+}

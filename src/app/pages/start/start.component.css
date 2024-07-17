@@ -38,7 +38,7 @@
   --bg: rgb(254, 113, 254);
   --bg-hover: rgb(229, 155, 254);
   --inner-shadow: rgb(198, 66, 251);
-  --outer-shadow: rgb( 20, 14, 102);
+  --outer-shadow: rgb(20, 14, 102);
 }
 .button-one {
   --bg: rgb(36, 98, 255);
@@ -59,4 +59,41 @@
 
 .button-one:hover {
   background: var(--bg-hover);
+}
+@media (max-width: 768px) {
+  .start-content {
+    width: 80%;
+  }
+  .button-one {
+    width: 90%;
+  }
+  .back-content {
+    width: 80%;
+    justify-content: center;
+  }
+  .back-button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+  }
+  .back-button img {
+    width: 24px;
+    height: 24px;
+  }
+  .back-button {
+    background: linear-gradient(
+      45deg,
+      rgba(254, 113, 254, 0.9),
+      rgba(198, 66, 251, 0.9)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-content img {
+    margin-left: 0;
+    margin-top: 16px;
+    width: 50%;
+  }
 }
