@@ -1,27 +1,53 @@
-# HangamanGame
+# Hangman Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+This project is an implementation of the classic Hangman game using Angular.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Hangman is a word guessing game where one player thinks of a word and the other player tries to guess it by suggesting letters within a certain number of guesses. For every incorrect guess, a part of the hangman's gallows and figure is drawn. The game ends when the player correctly guesses the word or runs out of guesses.
 
-## Code scaffolding
+## Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can play the game live [here](https://moses-hangaman-game.netlify.app/).
 
-## Build
+## How to Play
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Objective:** Guess the hidden word before the hangman is fully drawn.
 
-## Running unit tests
+2. **Game Rules:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   - The game provides a hidden word represented by dashes.
+   - Guess letters one at a time.
+   - Each correct guess reveals all occurrences of the guessed letter.
+   - Each incorrect guess adds a part to the hangman's gallows (head, body, arms, legs).
+   - You win by guessing the word correctly before the hangman figure is complete.
+   - You lose if the hangman figure is complete before you guess the word.
+   - You have a total of 8 tries to guess the word.
 
-## Running end-to-end tests
+3. **Categories:**
+   - Movies
+   - TV Shows
+   - Countries
+   - Capital Cities
+   - Animals
+   - Sports
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Game Features
 
-## Further help
+- Responsive design using Angular and Tailwind CSS.
+- Progress bar to track remaining guesses.
+- Modal for game settings and information.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <https://github.com/mosesfuraha/moses-hangaman-game>
+   ```

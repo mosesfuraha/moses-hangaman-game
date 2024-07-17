@@ -31,6 +31,6 @@ export class GuideComponent {
   constructor(private router: Router) {}
 
   navigateToStart() {
-    this.router.navigate(['/start']);
+    this.router.navigate(['']);
   }
 }
