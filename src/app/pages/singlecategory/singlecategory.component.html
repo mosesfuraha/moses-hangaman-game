@@ -9,29 +9,30 @@
       >
         <img src="assets/images/icon-menu.svg" alt="Back" class="w-8 h-8" />
       </button>
-      <h1 class="text-[4rem] text-[#FFFFFF] ml-12">Sports</h1>
+      <h1 class="text-[4rem] text-[#FFFFFF] ml-12">{{ category }}</h1>
     </div>
     <div class="flex items-center single-content">
       <div
         class="progress-bar w-52 h-3 bg-[#ffffff] rounded-full overflow-hidden mr-4"
       >
         <div
-          class="progress bg-[#151278] h-full rounded-full ml-4"
-          style="width: 50%"
+          class="progress bg-[#151278] h-full rounded-full"
+          [style.width]="getProgressBarWidth()"
         ></div>
       </div>
       <img src="assets/images/icon-heart.svg" alt="Heart" class="w-8 h-8" />
     </div>
   </div>
 
-  <!-- Word for guessing -->
-  <div class="word-container flex justify-center gap-4 single-content">
-    <button
+  <div
+    class="word-container flex justify-center gap-4 flex-wrap single-content"
+  >
+    <div
       *ngFor="let char of word"
       class="letter text-center bg-[#2463ff] text-[#FFFFFF] rounded-[2rem] text-[5rem] w-36 h-40"
     >
-      {{ char }}
-    </button>
+      {{ char ? char : "" }}
+    </div>
   </div>
 
   <div
@@ -40,25 +41,41 @@
     <div class="flex gap-6">
       <button
         *ngFor="let letter of lettersRow1"
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
+        (click)="guessLetter(letter)"
+        [ngClass]="{
+          'bg-[#151278] text-[#ffffff]': isDisabled(letter),
+          'bg-white text-[#151278]': !isDisabled(letter)
+        }"
+        [disabled]="isDisabled(letter)"
+        class="key py-6 px-8 rounded-3xl text-5xl"
       >
         {{ letter }}
       </button>
     </div>
-
     <div class="flex gap-6 mt-6 single-content">
       <button
         *ngFor="let letter of lettersRow2"
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
+        (click)="guessLetter(letter)"
+        [ngClass]="{
+          'bg-[#151278] text-[#ffffff]': isDisabled(letter),
+          'bg-white text-[#151278]': !isDisabled(letter)
+        }"
+        [disabled]="isDisabled(letter)"
+        class="key py-6 px-8 rounded-3xl text-5xl"
       >
         {{ letter }}
       </button>
     </div>
-    <!-- Row 3 -->
     <div class="flex gap-6 mt-6 single-content">
       <button
         *ngFor="let letter of lettersRow3"
-        class="key bg-white text-[#151278] py-6 px-8 rounded-3xl text-5xl"
+        (click)="guessLetter(letter)"
+        [ngClass]="{
+          'bg-[#151278] text-[#ffffff]': isDisabled(letter),
+          'bg-white text-[#151278]': !isDisabled(letter)
+        }"
+        [disabled]="isDisabled(letter)"
+        class="key py-6 px-8 rounded-3xl text-5xl"
       >
         {{ letter }}
       </button>

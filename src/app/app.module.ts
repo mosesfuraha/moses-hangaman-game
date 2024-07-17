@@ -8,6 +8,7 @@ import { GuideComponent } from './pages/guide/guide.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { WinComponent } from './components/win/win.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ModalComponent } from './components/modal/modal.component';
     GuideComponent,
     CategoryComponent,
     SinglecategoryComponent,
-    ModalComponent
+    ModalComponent,
+    WinComponent
   ],
   imports: [
     BrowserModule,

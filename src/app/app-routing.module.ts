@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'start', component: StartComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'category', component: CategoryComponent },
-  { path: 'category/:id', component: SinglecategoryComponent },
+  { path: 'category/:category', component: SinglecategoryComponent },
 ];
 
 @NgModule({
