@@ -6,7 +6,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
 import { WinComponent } from './components/win/win.component';
 
-const routes: Routes = [
+
+ export const routes: Routes = [
   { path: '', component: StartComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'category', component: CategoryComponent },

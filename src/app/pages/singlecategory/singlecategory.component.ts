@@ -31,6 +31,7 @@ export class SinglecategoryComponent implements OnInit {
     this.categoryService.getCategories().subscribe((categories) => {
       console.log('Categories:', categories);
       const words = categories[this.category];
+      console.log(words)
       if (!words) {
         console.error(`Category "${this.category}" not found in categories.`);
         return;
