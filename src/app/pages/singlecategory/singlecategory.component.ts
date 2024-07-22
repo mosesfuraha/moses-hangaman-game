@@ -31,18 +31,20 @@ export class SinglecategoryComponent implements OnInit {
     this.categoryService.getCategories().subscribe((categories) => {
       console.log('Categories:', categories);
       const words = categories[this.category];
-      console.log(words)
+
       if (!words) {
         console.error(`Category "${this.category}" not found in categories.`);
         return;
       }
+
       this.selectedWord = this.getRandomWord(words);
+
+      if (!this.selectedWord) {
+        console.log('No word selected');
+        return;
+      }
+
       this.revealInitialCharacters(this.selectedWord);
-      this.word = this.selectedWord
-        .split('')
-        .map((char) =>
-          this.revealedLetters.has(char.toUpperCase()) ? char : ''
-        );
     });
   }
 
@@ -52,17 +54,34 @@ export class SinglecategoryComponent implements OnInit {
   }
 
   revealInitialCharacters(word: string): void {
+    this.revealedLetters.clear();
+    if (word.length === 0) {
+      return;
+    }
     const numToReveal = Math.floor(word.length / 3);
     while (this.revealedLetters.size < numToReveal) {
       const randomIndex = Math.floor(Math.random() * word.length);
       this.revealedLetters.add(word[randomIndex].toUpperCase());
     }
+
+    this.word = word
+      .split('')
+      .map((char) =>
+        this.revealedLetters.has(char.toUpperCase()) ? char : ''
+      );
   }
 
   guessLetter(letter: string): void {
-    if (!this.guessedLetters.has(letter) && !this.revealedLetters.has(letter)) {
-      this.guessedLetters.add(letter);
-      this.remainingAttempts--;
+    const upperCaseLetter = letter.toUpperCase();
+    if (
+      !this.guessedLetters.has(upperCaseLetter) &&
+      !this.revealedLetters.has(upperCaseLetter)
+    ) {
+      this.guessedLetters.add(upperCaseLetter);
+
+      if (!this.selectedWord.toUpperCase().includes(upperCaseLetter)) {
+        this.remainingAttempts--;
+      }
 
       this.word = this.selectedWord
         .split('')

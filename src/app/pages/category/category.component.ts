@@ -18,7 +18,7 @@ export class CategoryComponent {
 
   constructor(private router: Router) {}
   navigateToStart() {
-    this.router.navigate(['/start']);
+    this.router.navigate(['']);
   }
   navigateToCategory(category: string) {
     this.router.navigate(['/category', category]);

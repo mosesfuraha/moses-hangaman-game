@@ -25,7 +25,7 @@ export class ModalComponent implements OnInit {
     switch (action) {
       case 'continue':
         if (this.modalType === 'paused') {
-          this.router.navigate(['/start']);
+          this.router.navigate(['']);
         }
         break;
       case 'playAgain':
@@ -37,7 +37,7 @@ export class ModalComponent implements OnInit {
         this.router.navigate(['/category']);
         break;
       case 'quit':
-        this.router.navigate(['/start']);
+        this.router.navigate(['']);
         break;
       default:
         break;
