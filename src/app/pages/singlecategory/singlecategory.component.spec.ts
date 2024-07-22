@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { SinglecategoryComponent } from './singlecategory.component';
 import { CategoryService } from '../../services/category.service';
-import { ModalService } from '../../services/modal.service';
 import { of } from 'rxjs';
 
 describe('SinglecategoryComponent', () => {
