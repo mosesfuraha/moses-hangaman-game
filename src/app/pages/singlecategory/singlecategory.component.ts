@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../../services/category.service';
 import { ModalService } from '../../services/modal.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-singlecategory',
@@ -19,33 +20,35 @@ export class SinglecategoryComponent implements OnInit {
   revealedLetters: Set<string> = new Set();
   totalAttempts: number = 8;
   remainingAttempts: number = this.totalAttempts;
-
+  private categorySubscription!: Subscription;
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private modalService: ModalService
   ) {}
-
   ngOnInit(): void {
     this.category = this.route.snapshot.paramMap.get('category')!;
-    this.categoryService.getCategories().subscribe((categories) => {
-      console.log('Categories:', categories);
-      const words = categories[this.category];
+    this.categorySubscription = this.categoryService
+      .getCategories()
+      .subscribe((categories) => {
+        const words = categories[this.category];
+        if (!words) {
+          console.error(`Category "${this.category}" not found in categories.`);
+          return;
+        }
+        this.selectedWord = this.getRandomWord(words);
+        if (!this.selectedWord) {
+          console.log('No word selected');
+          return;
+        }
+        this.revealInitialCharacters(this.selectedWord);
+      });
+  }
 
-      if (!words) {
-        console.error(`Category "${this.category}" not found in categories.`);
-        return;
-      }
-
-      this.selectedWord = this.getRandomWord(words);
-
-      if (!this.selectedWord) {
-        console.log('No word selected');
-        return;
-      }
-
-      this.revealInitialCharacters(this.selectedWord);
-    });
+  ngOnDestroy(): void {
+    if (this.categorySubscription) {
+      this.categorySubscription.unsubscribe();
+    }
   }
 
   getRandomWord(words: { name: string }[]): string {
@@ -73,6 +76,7 @@ export class SinglecategoryComponent implements OnInit {
 
   guessLetter(letter: string): void {
     const upperCaseLetter = letter.toUpperCase();
+    console.log(`Guessing letter: ${upperCaseLetter}`);
     if (
       !this.guessedLetters.has(upperCaseLetter) &&
       !this.revealedLetters.has(upperCaseLetter)
@@ -81,6 +85,7 @@ export class SinglecategoryComponent implements OnInit {
 
       if (!this.selectedWord.toUpperCase().includes(upperCaseLetter)) {
         this.remainingAttempts--;
+        console.log(`Remaining attempts: ${this.remainingAttempts}`);
       }
 
       this.word = this.selectedWord

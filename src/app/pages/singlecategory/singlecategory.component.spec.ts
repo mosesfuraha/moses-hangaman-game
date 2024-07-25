@@ -76,7 +76,7 @@ describe('SinglecategoryComponent', () => {
 
   it('it should reveal initial characters', () => {
     const word = 'hangman';
-    const randomMath = Math.random; //predicts the random values
+    const randomMath = Math.random;
     const randomValues = [0.1, 0.4, 0.7];
     let randomeIndex = 0;
     Math.random = jest.fn(
@@ -127,31 +127,37 @@ describe('SinglecategoryComponent', () => {
     expect(component.revealedLetters.size).toBe(numToReveal);
   });
 
-  //when the guess  is correct
   it('should handle a correct guess', () => {
     component.selectedWord = 'soccer';
     component.revealInitialCharacters('soccer');
     component.guessLetter('S');
     expect(component.guessedLetters.has('S')).toBe(true);
     expect(component.remainingAttempts).toBe(8);
-    // expect(component.word.join('')).toContain('S');
   });
 
-  //when the guess is  incorrect
   it('should handle an incorrect guess', () => {
     component.selectedWord = 'soccer';
     component.revealInitialCharacters('soccer');
-    component.guessLetter('Z'); // Incorrect guess
+    component.guessLetter('Z');
     expect(component.guessedLetters.has('Z')).toBe(true);
-    expect(component.remainingAttempts).toBe(7); // Decreased by 1
+    expect(component.remainingAttempts).toBe(7);
     expect(component.word.join('')).not.toContain('Z');
   });
 
-  //when attempts are done
   it('should handle when all attempts are done', () => {
+    component.selectedWord = 'SOCCER'; // Set a known word
     const incorrectGuesses = ['Z', 'X', 'Q', 'W', 'R', 'T', 'Y', 'U'];
     incorrectGuesses.forEach((letter) => component.guessLetter(letter));
     expect(component.remainingAttempts).toBe(0);
     expect(modalService.showModal).toHaveBeenCalledWith('lose');
+  });
+
+  it('should unsubscribe from categorySubscription on ngOnDestroy', () => {
+    const subscriptionSpy = jest.spyOn(
+      component['categorySubscription'],
+      'unsubscribe'
+    );
+    component.ngOnDestroy();
+    expect(subscriptionSpy).toHaveBeenCalled();
   });
 });
